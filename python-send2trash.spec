@@ -1,6 +1,3 @@
-# TODO:
-# - check py3 binding:
-# AttributeError: /usr/bin/python3: undefined symbol: GetMacOSStatusCommentString
 #
 # Conditional build:
 %bcond_without	doc	# don't build doc
@@ -12,7 +9,7 @@
 Summary:	Send file to trash natively under Mac OS X, Windows and Linux
 Name:		python-%{module}
 Version:	1.3.0
-Release:	0.1
+Release:	1
 License:	BSD
 Group:		Libraries/Python
 Source0:	https://pypi.python.org/packages/source/S/Send2Trash/Send2Trash-%{version}.tar.gz
@@ -22,9 +19,15 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
 BuildRequires:	python-setuptools
+%if %{with tests}
+BuildRequires:	python-pygobject3
+%endif
 %endif
 %if %{with python3}
 BuildRequires:	python3-setuptools
+%if %{with tests}
+BuildRequires:	python3-pygobject3
+%endif
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
