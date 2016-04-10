@@ -59,8 +59,8 @@ freedesktop.org.
 
 # remove non-linux platforms
 %ifos Linux
-%{__rm} send2trash/plat_osx.py
-%{__rm} send2trash/plat_win.py
+mv send2trash/plat_osx.py .
+mv send2trash/plat_win.py .
 %endif
 
 %build
