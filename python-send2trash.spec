@@ -89,7 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python2}
 %files
 %defattr(644,root,root,755)
-%doc README.rst
+%doc README.rst CHANGES.rst
 %{py_sitescriptdir}/send2trash
 %{py_sitescriptdir}/Send2Trash-%{version}-py*.egg-info
 %endif
@@ -97,7 +97,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python3}
 %files -n python3-%{module}
 %defattr(644,root,root,755)
-%doc README.rst
+%doc README.rst CHANGES.rst
 %{py3_sitescriptdir}/send2trash
 %{py3_sitescriptdir}/Send2Trash-%{version}-py*.egg-info
 %endif
