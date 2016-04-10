@@ -54,6 +54,12 @@ freedesktop.org.
 %prep
 %setup -q -n Send2Trash-%{version}
 
+# remove non-linux platforms
+%ifos Linux
+%{__rm} send2trash/plat_osx.py
+%{__rm} send2trash/plat_win.py
+%endif
+
 %build
 %if %{with python2}
 %py_build %{?with_tests:test}
