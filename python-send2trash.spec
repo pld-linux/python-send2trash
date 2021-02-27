@@ -9,7 +9,7 @@
 Summary:	Send file to trash natively under Mac OS X, Windows and Linux
 Name:		python-%{module}
 Version:	1.3.0
-Release:	4
+Release:	5
 License:	BSD
 Group:		Libraries/Python
 Source0:	https://pypi.python.org/packages/source/S/Send2Trash/Send2Trash-%{version}.tar.gz
